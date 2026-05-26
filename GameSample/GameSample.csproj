@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DefaultItemExcludes>$(DefaultItemExcludes);GameSample.ContentBuilder\**\*</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameMake.UI\GameMake.UI.csproj" />
+    <ProjectReference Include="GameSample.ContentBuilder\GameSample.ContentBuilder.csproj" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.5-preview.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources/**/*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UILayout/**/*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts/**/*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content/*.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <Target Name="BuildContent" BeforeTargets="BeforeCompile">
+    <Exec Command="dotnet run --project &quot;$(MSBuildThisFileDirectory)GameSample.ContentBuilder/GameSample.ContentBuilder.csproj&quot; -- build --workingDir &quot;$(MSBuildThisFileDirectory)GameSample.ContentBuilder&quot; -s Assets/Fonts -o Output -i obj/Output" />
+    <ItemGroup>
+      <_ContentBuilderXnb Include="$(MSBuildThisFileDirectory)GameSample.ContentBuilder/Output/Content/*.xnb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_ContentBuilderXnb)" DestinationFolder="$(MSBuildThisFileDirectory)Content" />
+  </Target>
+
+</Project>

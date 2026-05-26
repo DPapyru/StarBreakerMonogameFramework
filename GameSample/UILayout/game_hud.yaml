@@ -1,0 +1,129 @@
+- Id: GameHUD
+  Scene: GameHUD
+  Components:
+    - Type: RectTransform
+      Anchor: Stretch
+      ZOrder: 0
+  Children:
+    - Id: SceneBg
+      Components:
+        - Type: ImageRenderer
+          TexturePath: Resources/碎筑成序/分镜场景/Demo1.jpg
+        - Type: RectTransform
+          Anchor: Stretch
+          ZOrder: 0
+
+    - Id: ChapterTitle
+      Components:
+        - Type: TextRenderer
+          Text: 第一章：钟楼的记忆
+          FontPath: Microsoft YaHei
+          FontSize: 28
+          Color: [1.0, 1.0, 1.0, 1.0]
+        - Type: RectTransform
+          Anchor: TopCenter
+          Position: [0, 20]
+          Size: [400, 40]
+          ZOrder: 1
+
+    - Id: ProgressBar
+      Components:
+        - Type: RectTransform
+          Anchor: BottomCenter
+          Position: [0, -100]
+          Size: [300, 30]
+          ZOrder: 2
+      Children:
+        - Id: BarBg
+          Components:
+            - Type: PanelRenderer
+              Color: [0.2, 0.2, 0.2, 1.0]
+            - Type: RectTransform
+              Anchor: Stretch
+              ZOrder: 0
+        - Id: BarFill
+          Components:
+            - Type: ProgressRenderer
+              BgColor: [0.2, 0.2, 0.2, 1.0]
+              FillColor: [0.2, 0.7, 0.2, 1.0]
+              Progress: 0
+            - Type: RectTransform
+              Anchor: Stretch
+              ZOrder: 1
+
+    - Id: ProgressLabel
+      Components:
+        - Type: TextRenderer
+          Text: 建造进度：0%
+          FontPath: Microsoft YaHei
+          FontSize: 16
+          Color: [1.0, 1.0, 1.0, 1.0]
+        - Type: RectTransform
+          Anchor: BottomCenter
+          Position: [0, -65]
+          Size: [200, 25]
+          ZOrder: 2
+
+    - Id: ActionBtn
+      Components:
+        - Type: RectTransform
+          Anchor: BottomCenter
+          Position: [-120, -30]
+          Size: [160, 45]
+          ZOrder: 3
+      Children:
+        - Id: ActionBtnBg
+          Components:
+            - Type: ButtonRenderer
+              NormalColor: [0.2, 0.4, 0.6, 1.0]
+              HoverColor: [0.3, 0.5, 0.7, 1.0]
+              PressColor: [0.1, 0.3, 0.5, 1.0]
+            - Type: RectTransform
+              Anchor: Stretch
+              ZOrder: 0
+            - Type: ScriptComponent
+              Path: Scripts/GameActionButton.cs
+        - Id: ActionBtnText
+          Components:
+            - Type: TextRenderer
+              Text: 放置台基
+              FontPath: Microsoft YaHei
+              FontSize: 20
+              Color: [1.0, 1.0, 1.0, 1.0]
+            - Type: RectTransform
+              Anchor: Center
+              Position: [0, 0]
+              Size: [160, 45]
+              ZOrder: 1
+
+    - Id: ReturnBtn
+      Components:
+        - Type: RectTransform
+          Anchor: BottomLeft
+          Position: [20, -20]
+          Size: [120, 40]
+          ZOrder: 3
+      Children:
+        - Id: ReturnBtnBg
+          Components:
+            - Type: ButtonRenderer
+              NormalColor: [0.4, 0.3, 0.2, 1.0]
+              HoverColor: [0.5, 0.4, 0.3, 1.0]
+              PressColor: [0.3, 0.2, 0.1, 1.0]
+            - Type: RectTransform
+              Anchor: Stretch
+              ZOrder: 0
+            - Type: ScriptComponent
+              Path: Scripts/ReturnButton.cs
+        - Id: ReturnBtnText
+          Components:
+            - Type: TextRenderer
+              Text: 返回主菜单
+              FontPath: Microsoft YaHei
+              FontSize: 18
+              Color: [1.0, 1.0, 1.0, 1.0]
+            - Type: RectTransform
+              Anchor: Center
+              Position: [0, 0]
+              Size: [120, 40]
+              ZOrder: 1

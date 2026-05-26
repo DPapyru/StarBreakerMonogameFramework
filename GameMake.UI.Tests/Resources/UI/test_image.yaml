@@ -1,0 +1,4 @@
+- Id: TestImage
+  Components:
+    - Type: ImageRenderer
+      TexturePath: Resources/UI/0DFB91ECF743D5E5A80B326306DF4D60.png

@@ -1,0 +1,18 @@
+- Id: MainMenu
+  Components:
+    - Type: PanelRenderer
+      Color: [0.05, 0.05, 0.1, 1.0]
+    - Type: RectTransform
+      Anchor: Stretch
+  Children:
+    - Id: BgImage
+      Components:
+        - Type: ImageRenderer
+          TexturePath: Resources/主界面/1F94FDDFA9BDBF34E5894512B96652A5.png
+    - Id: StartBtn
+      Components:
+        - Type: ButtonRenderer
+          Text: Start
+        - Type: RectTransform
+          Anchor: Center
+          Size: [200, 50]

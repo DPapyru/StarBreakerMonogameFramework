@@ -1,0 +1,124 @@
+- Id: MainMenu
+  Scene: MainMenu
+  Components:
+    - Type: RectTransform
+      Anchor: Stretch
+      ZOrder: 0
+  Children:
+    - Id: BgImage
+      Components:
+        - Type: ImageRenderer
+          TexturePath: Resources/碎筑成序/主界面/背景图.png
+        - Type: RectTransform
+          Anchor: Stretch
+          ZOrder: 0
+
+    - Id: Hero
+      Components:
+        - Type: SpriteRenderer
+          TexturePath: Resources/碎筑成序/主角/正常.png
+        - Type: RectTransform
+          Anchor: CenterLeft
+          Position: [40, 0]
+          Size: [180, 300]
+          ZOrder: 1
+
+    - Id: Logo
+      Components:
+        - Type: ImageRenderer
+          TexturePath: Resources/碎筑成序/主界面/游戏Logo.png
+        - Type: RectTransform
+          Anchor: TopCenter
+          Position: [0, 50]
+          Size: [260, 70]
+          ZOrder: 1
+
+    - Id: TitleText
+      Components:
+        - Type: TextRenderer
+          Text: 碎筑成序
+          FontPath: Microsoft YaHei
+          FontSize: 36
+          Color: [1.0, 0.95, 0.8, 1.0]
+        - Type: RectTransform
+          Anchor: TopCenter
+          Position: [0, 130]
+          Size: [400, 50]
+          ZOrder: 2
+
+    - Id: StartBtn
+      Components:
+        - Type: RectTransform
+          Anchor: Center
+          Position: [0, -50]
+          Size: [200, 50]
+          ZOrder: 3
+      Children:
+        - Id: StartBtnBg
+          Components:
+            - Type: ButtonRenderer
+              NormalColor: [0.2, 0.5, 0.2, 1.0]
+              HoverColor: [0.3, 0.7, 0.3, 1.0]
+              PressColor: [0.1, 0.3, 0.1, 1.0]
+            - Type: RectTransform
+              Anchor: Stretch
+              ZOrder: 0
+            - Type: ScriptComponent
+              Path: Scripts/MenuStartButton.cs
+        - Id: StartBtnText
+          Components:
+            - Type: TextRenderer
+              Text: 开始游戏
+              FontPath: Microsoft YaHei
+              FontSize: 22
+              Color: [1.0, 1.0, 1.0, 1.0]
+            - Type: RectTransform
+              Anchor: Center
+              Position: [0, 0]
+              Size: [200, 50]
+              ZOrder: 1
+
+    - Id: QuitBtn
+      Components:
+        - Type: RectTransform
+          Anchor: Center
+          Position: [0, 50]
+          Size: [200, 50]
+          ZOrder: 3
+      Children:
+        - Id: QuitBtnBg
+          Components:
+            - Type: ButtonRenderer
+              NormalColor: [0.5, 0.2, 0.2, 1.0]
+              HoverColor: [0.7, 0.3, 0.3, 1.0]
+              PressColor: [0.3, 0.1, 0.1, 1.0]
+            - Type: RectTransform
+              Anchor: Stretch
+              ZOrder: 0
+            - Type: ScriptComponent
+              Path: Scripts/QuitButton.cs
+        - Id: QuitBtnText
+          Components:
+            - Type: TextRenderer
+              Text: 退出游戏
+              FontPath: Microsoft YaHei
+              FontSize: 22
+              Color: [1.0, 1.0, 1.0, 1.0]
+            - Type: RectTransform
+              Anchor: Center
+              Position: [0, 0]
+              Size: [200, 50]
+              ZOrder: 1
+
+    - Id: VersionText
+      Components:
+        - Type: TextRenderer
+          Text: v0.1.0
+          FontPath: Microsoft YaHei
+          FontSize: 14
+          Color: [0.6, 0.6, 0.6, 1.0]
+        - Type: RectTransform
+          Anchor: BottomRight
+          Position: [-10, -10]
+          Size: [100, 20]
+          ZOrder: 2

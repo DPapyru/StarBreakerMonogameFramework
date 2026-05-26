@@ -1,0 +1,11 @@
+speakers:
+  narrator:
+    display_name: 旁白
+    color: [1.0, 1.0, 1.0, 1.0]
+  hero:
+    display_name: 林末
+    color: [0.6, 0.8, 1.0, 1.0]
+    expressions:
+      neutral: Resources/碎筑成序/主角小表情/72FF7FF5435F651898338F4F0344893A.png
+      smile: Resources/碎筑成序/主角小表情/E845B0CDCCD624EF9917AA027ACC0E79.png
+      surprised: Resources/碎筑成序/主角小表情/EB3C9B014438EC915F7CED5467E4AAAC.png

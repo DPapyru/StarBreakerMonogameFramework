@@ -1,0 +1,60 @@
+- Type: Say
+  Speaker: narrator
+  Text: 钟楼的钟声已经停摆多年，尘埃覆盖了每一寸记忆。
+  Speed: 25
+
+- Type: Say
+  Speaker: hero
+  Text: 这里是……钟楼的地下室？
+  Expression: surprised
+
+- Type: Say
+  Speaker: hero
+  Text: 这些碎片……散发着微弱的光芒。
+  Expression: neutral
+
+- Type: Say
+  Speaker: narrator
+  Text: 你的面前散落着几块泛着微光的碎片。它们是「筑序」的遗物。
+
+- Type: Branch
+  Text: 你要怎么做？
+  Options:
+    - Text: 捡起碎片
+      JumpTarget: pick_up
+    - Text: 仔细观察四周
+      JumpTarget: observe
+
+- Type: Label
+  Name: pick_up
+
+- Type: Say
+  Speaker: hero
+  Text: 碎片触手温润，仿佛有生命在微微脉动。
+  Expression: neutral
+
+- Type: Jump
+  Target: after_branch
+
+- Type: Label
+  Name: observe
+
+- Type: Say
+  Speaker: hero
+  Text: 墙壁上刻满了古老的铭文……似乎在记载这座塔的历史。
+  Expression: surprised
+
+- Type: Label
+  Name: after_branch
+
+- Type: Say
+  Speaker: narrator
+  Text: 无论你做出何种选择，命运的齿轮已经开始转动。
+
+- Type: Say
+  Speaker: hero
+  Text: 我一定要修复这一切。
+  Expression: smile
+
+- Type: Callback
+  Name: OnChapter1End
